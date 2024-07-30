@@ -7,10 +7,10 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = values => {
+  const handleLogin = (values) => {
     setLoading(true);
     const { username, password } = values;
-    if (username === "ilyos" && password === "333196454") {
+    if (username === "john32" && password === "12345678") {
       toast.success("Login successful!");
       navigate("/dashboard");
     } else {
@@ -24,12 +24,14 @@ const Login = () => {
       <Form name="login" onFinish={handleLogin} className="form">
         <Form.Item
           name="username"
-          rules={[{ required: true, message: "Please input your Username!" }]}>
+          rules={[{ required: true, message: "Please input your Username!" }]}
+        >
           <Input placeholder="Username" />
         </Form.Item>
         <Form.Item
           name="password"
-          rules={[{ required: true, message: "Please input your Password!" }]}>
+          rules={[{ required: true, message: "Please input your Password!" }]}
+        >
           <Input.Password placeholder="Password" />
         </Form.Item>
         <Form.Item>
